@@ -1,6 +1,6 @@
 package backend;
 
-public class Farmer {
+public class Farmer implements Comparable<Farmer> {
 
     private int farmerId;
     private String name;
@@ -44,5 +44,10 @@ public class Farmer {
 
     public String getState() {
         return state;
+    }
+
+    @Override
+    public int compareTo(Farmer other) {
+        return this.name.compareToIgnoreCase(other.name);
     }
 }
