@@ -1,0 +1,578 @@
+/* ==============================
+   KISANMITRA - MODERN UI DESIGN
+================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+:root {
+    --green: #246b3b;
+    --dark-green: #16452b;
+    --light-green: #e8f3e9;
+    --cream: #f7f8f1;
+    --text: #24352a;
+    --muted: #6c7b70;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+}
+
+.app {
+    min-height: 100vh;
+    background: radial-gradient(circle at 10% 15%, #e2efdf 0, transparent 30%), var(--cream);
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    min-height: 78px;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 3px 18px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar h2 {
+    color: var(--dark-green);
+    font-size: 25px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #45564a;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+
+/* HOME HERO */
+
+.hero {
+    min-height: 480px;
+    padding: 90px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: linear-gradient(110deg, rgba(15, 65, 35, 0.94), rgba(35, 107, 59, 0.78)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero h1 {
+    max-width: 700px;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #e5f1e6;
+}
+
+.explore-btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    border-radius: 9px;
+    background: #f0c96b;
+    color: #243b29;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.explore-btn:hover {
+    transform: translateY(-3px);
+    background: #ffda83;
+}
+
+
+/* GENERAL PAGE HEADINGS */
+
+.schemes-page,
+.crops-page {
+    min-height: 85vh;
+    padding: 65px 7%;
+}
+
+.schemes-page>h1,
+.crops-page>h1 {
+    text-align: center;
+    font-size: 38px;
+    color: var(--dark-green);
+    margin-bottom: 12px;
+}
+
+.schemes-page>p,
+.crops-page>p {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+
+/* FEATURE CARDS */
+
+.features {
+    padding: 70px 7%;
+    text-align: center;
+}
+
+.features h2 {
+    color: var(--dark-green);
+    font-size: 34px;
+}
+
+.feature-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.feature-card {
+    padding: 30px 25px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(30, 70, 40, 0.07);
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(30, 70, 40, 0.13);
+}
+
+.feature-icon {
+    font-size: 42px;
+}
+
+.feature-card h3 {
+    color: var(--dark-green);
+}
+
+
+/* SCHEME CARDS */
+
+.scheme-container,
+.crop-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.scheme-card,
+.crop-card {
+    background: white;
+    border: 1px solid #e6eee4;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 8px 25px rgba(30, 70, 40, 0.06);
+    transition: 0.3s;
+}
+
+.scheme-card:hover,
+.crop-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(30, 70, 40, 0.12);
+}
+
+.scheme-card h3,
+.crop-card h3 {
+    color: var(--dark-green);
+    font-size: 21px;
+}
+
+.scheme-card p,
+.crop-card p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.scheme-category {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 20px;
+    background: var(--light-green);
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.scheme-card button,
+.crop-btn {
+    background: var(--green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    margin-top: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* CROPS */
+
+.crop-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.crop-details {
+    background: #f4f8f1;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 18px 0;
+}
+
+.crop-search {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    margin: 25px auto;
+    padding: 15px 18px;
+    border: 1px solid #d9e5d8;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+}
+
+.crop-search:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px #246b3b18;
+}
+
+
+/* REGISTRATION */
+
+.register-page {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 55px 20px;
+    background: linear-gradient(120deg, #e5f0df, #f7f8f1, #dcebdc);
+}
+
+.register-card {
+    width: 100%;
+    max-width: 480px;
+    padding: 38px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(24, 70, 38, 0.12);
+}
+
+.register-card h1 {
+    text-align: center;
+    color: var(--dark-green);
+    margin-bottom: 10px;
+}
+
+.register-card>p {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+
+.register-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.register-card label {
+    color: var(--text);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.register-card input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #dce5dc;
+    border-radius: 9px;
+    font-size: 15px;
+    outline: none;
+}
+
+.register-card input:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px #246b3b18;
+}
+
+.register-card button {
+    padding: 15px;
+    margin-top: 12px;
+    background: var(--green);
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.register-card button:hover,
+.scheme-card button:hover,
+.crop-btn:hover {
+    background: var(--dark-green);
+}
+
+.form-message {
+    color: var(--green);
+    text-align: center;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 35px 7%;
+    text-align: center;
+    background: var(--dark-green);
+    color: white;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero {
+        min-height: 400px;
+        padding: 60px 7%;
+    }
+    .hero h1 {
+        font-size: 38px;
+    }
+    .schemes-page,
+    .crops-page {
+        padding: 45px 5%;
+    }
+    .register-card {
+        padding: 25px;
+    }
+}
+
+
+/* HOME PAGE IMPROVEMENTS */
+
+.hero {
+    min-height: 520px;
+    padding: 90px 9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: linear-gradient(90deg, rgba(12, 55, 29, 0.92), rgba(20, 75, 38, 0.55)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 5vw, 65px);
+    max-width: 750px;
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.hero p {
+    max-width: 600px;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.hero-buttons a {
+    text-decoration: none;
+}
+
+.register-home-btn {
+    padding: 14px 25px;
+    background: white;
+    color: #246b3b;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.features {
+    padding: 75px 8%;
+    text-align: center;
+}
+
+.features>p {
+    color: #6c7b70;
+    margin-bottom: 35px;
+}
+
+.feature-card {
+    text-align: left;
+}
+
+.feature-card a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #246b3b;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.home-banner {
+    padding: 65px 20px;
+    text-align: center;
+    background: #16452b;
+    color: white;
+}
+
+.home-banner h2 {
+    font-size: 30px;
+}
+
+.home-banner p {
+    color: #dcebdc;
+}
+
+.home-page {
+    background: #f5f8f1;
+}
+
+.hero {
+    min-height: 540px;
+    padding: 80px 9%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(10, 55, 28, .9), rgba(10, 55, 28, .25)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-tag {
+    color: #f5d77a;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.2;
+    margin: 22px 0;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.hero-buttons a {
+    text-decoration: none;
+}
+
+.register-home-btn {
+    background: white;
+    color: #246b3b;
+    padding: 14px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.features {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.feature-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .07);
+}
+
+.feature-card a {
+    color: #246b3b;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.home-banner {
+    background: #16452b;
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 38px;
+    }
+    .hero {
+        padding: 55px 7%;
+    }
+}
