@@ -1,3 +1,4 @@
+import API_BASE_URL from "../api";
 import { useState } from "react";
 
 function Register() {
@@ -28,7 +29,7 @@ function Register() {
     try {
       setLoading(true);
 
-      const response = await fetch("/api/farmers", {
+      const response = await fetch(`${API_BASE_URL}/api/farmers`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

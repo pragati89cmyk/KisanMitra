@@ -22,10 +22,14 @@ public class ApiServer {
 
     public static void main(String[] args) throws IOException {
 
+        int port = Integer.parseInt(
+                System.getenv().getOrDefault("PORT", "8080")
+        );
+
         notificationService.start();
 
         HttpServer server = HttpServer.create(
-                new InetSocketAddress(8080), 0
+                new InetSocketAddress("0.0.0.0", port), 0
         );
 
         server.createContext("/api/farmers", exchange -> {
@@ -44,15 +48,20 @@ public class ApiServer {
 
         server.start();
 
-        System.out.println("KisanMitra API is running on port 8080");
-        System.out.println("Farmers endpoint: http://localhost:8080/api/farmers");
+        System.out.println("KisanMitra API is running on port " + port);
+        System.out.println("Farmers endpoint: /api/farmers");
     }
 
     private static void handleRequest(HttpExchange exchange)
             throws IOException {
 
+        String frontendOrigin = System.getenv().getOrDefault(
+                "FRONTEND_ORIGIN",
+                "http://localhost:5173"
+        );
+
         exchange.getResponseHeaders().set(
-                "Access-Control-Allow-Origin", "*"
+                "Access-Control-Allow-Origin", frontendOrigin
         );
 
         exchange.getResponseHeaders().set(

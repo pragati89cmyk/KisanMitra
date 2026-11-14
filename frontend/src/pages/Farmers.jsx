@@ -1,3 +1,4 @@
+import API_BASE_URL from "../api";
 import { useCallback, useEffect, useState } from "react";
 
 function Farmers() {
@@ -15,7 +16,7 @@ function Farmers() {
   const fetchFarmers = useCallback(async () => {
     try {
       setError("");
-      const response = await fetch("/api/farmers");
+      const response = await fetch(`${API_BASE_URL}/api/farmers`);
 
       if (!response.ok) {
         throw new Error("Unable to fetch farmers.");
@@ -53,7 +54,7 @@ function Farmers() {
       setSaving(true);
       setMessage("");
 
-      const response = await fetch("/api/farmers", {
+      const response = await fetch(`${API_BASE_URL}/api/farmers`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -89,7 +90,7 @@ function Farmers() {
     try {
       setMessage("");
 
-      const response = await fetch("/api/farmers", {
+      const response = await fetch(`${API_BASE_URL}/api/farmers`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ phone }),

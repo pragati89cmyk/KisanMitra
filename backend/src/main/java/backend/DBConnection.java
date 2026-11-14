@@ -7,9 +7,16 @@ import java.sql.SQLException;
 public class DBConnection {
 
     private static final String URL =
-            "jdbc:mysql://localhost:3306/kisanmitra";
+            System.getenv().getOrDefault(
+                    "DB_URL",
+                    "jdbc:mysql://localhost:3306/kisanmitra"
+            );
 
-    private static final String USER = "kisanmitra_app";
+    private static final String USER =
+            System.getenv().getOrDefault(
+                    "DB_USER",
+                    "kisanmitra_app"
+            );
 
     private static final String PASSWORD =
             System.getenv("KISANMITRA_DB_PASSWORD");
