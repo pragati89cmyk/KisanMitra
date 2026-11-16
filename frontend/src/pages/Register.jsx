@@ -59,60 +59,136 @@ function Register() {
   }
 
   return (
-    <div className="register-page">
-      <div className="register-card">
-        <h1>🌾 Join KisanMitra</h1>
-        <p>Create your farmer account</p>
+    <main className="register-page">
+      <section className="register-intro">
+        <span className="register-eyebrow">
+          WELCOME TO KISANMITRA
+        </span>
+
+        <h1>
+          Growing Together,
+          <span> Stronger Together.</span>
+        </h1>
+
+        <p>
+          Become a part of a growing farming community.
+          Connect with agricultural information and discover
+          opportunities that support your farming journey.
+        </p>
+
+        <div className="register-points">
+          <div>
+            <span>🌱</span>
+            <div>
+              <strong>Farmer Community</strong>
+              <small>Be part of our growing community.</small>
+            </div>
+          </div>
+
+          <div>
+            <span>🌾</span>
+            <div>
+              <strong>Agricultural Knowledge</strong>
+              <small>Explore crops and farming information.</small>
+            </div>
+          </div>
+
+          <div>
+            <span>🤝</span>
+            <div>
+              <strong>Government Support</strong>
+              <small>Discover schemes for eligible farmers.</small>
+            </div>
+          </div>
+        </div>
+
+        <div className="register-quote">
+          "The future of farming begins with informed farmers."
+        </div>
+      </section>
+
+      <section className="register-card">
+        <div className="register-card-heading">
+          <div className="register-logo">🌾</div>
+          <span>JOIN OUR COMMUNITY</span>
+          <h2>Create Your Account</h2>
+          <p>Enter your details to register with KisanMitra.</p>
+        </div>
 
         <form onSubmit={handleSubmit}>
-          <label>Full Name</label>
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter your name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+          <div className="register-field">
+            <label htmlFor="farmer-name">Full Name</label>
+            <input
+              id="farmer-name"
+              type="text"
+              name="name"
+              placeholder="Enter your full name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-          <label>Phone Number</label>
-          <input
-            type="tel"
-            name="phone"
-            placeholder="10-digit mobile number"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-          />
+          <div className="register-field">
+            <label htmlFor="farmer-phone">Phone Number</label>
+            <input
+              id="farmer-phone"
+              type="tel"
+              name="phone"
+              placeholder="Enter 10-digit mobile number"
+              value={formData.phone}
+              onChange={handleChange}
+              maxLength={10}
+              required
+            />
+          </div>
 
-          <label>Village</label>
-          <input
-            type="text"
-            name="village"
-            placeholder="Enter your village"
-            value={formData.village}
-            onChange={handleChange}
-            required
-          />
+          <div className="register-field">
+            <label htmlFor="farmer-village">Village</label>
+            <input
+              id="farmer-village"
+              type="text"
+              name="village"
+              placeholder="Enter your village"
+              value={formData.village}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-          <label>State</label>
-          <input
-            type="text"
-            name="state"
-            placeholder="Enter your state"
-            value={formData.state}
-            onChange={handleChange}
-            required
-          />
+          <div className="register-field">
+            <label htmlFor="farmer-state">State</label>
+            <input
+              id="farmer-state"
+              type="text"
+              name="state"
+              placeholder="Enter your state"
+              value={formData.state}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-          <button type="submit" disabled={loading}>
-            {loading ? "Registering..." : "Create Account"}
+          <button
+            type="submit"
+            className="register-submit"
+            disabled={loading}
+          >
+            {loading ? "Registering..." : "Create Farmer Account →"}
           </button>
 
-          {message && <p className="form-message">{message}</p>}
+          {message && (
+            <p className="form-message" role="status">
+              {message}
+            </p>
+          )}
         </form>
-      </div>
-    </div>
+
+        <p className="register-privacy">
+          🌿 Your information is used for farmer registration.
+        </p>
+      </section>
+    </main>
   );
 }
 
